@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension point="org.eclipse.php.core.completionStrategyFactories">
+     <factory class="org.velzno.codeassist.Rhaco2CompletionStrategyFactory"/>
+  </extension>
+  <extension point="org.eclipse.php.core.completionContextResolvers">
+     <resolver class="org.velzno.codeassist.Rhaco2ContextResolver"/>
+  </extension>
+  <extension point="org.eclipse.php.core.goalEvaluatorFactories">
+     <factory class="org.velzno.codeassist.FunctionGoalEvaluatorFactory" priority="100"/>
+  </extension>
+</plugin>
