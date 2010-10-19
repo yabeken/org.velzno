@@ -6,9 +6,9 @@ import org.eclipse.php.internal.core.codeassist.contexts.CompletionContextResolv
 
 public class Rhaco2ContextResolver extends CompletionContextResolver implements ICompletionContextResolver{
 	public ICompletionContext[] createContexts() {
-	    return new ICompletionContext[] { 
-		    		new FunctionCompletionContext(),
-		    		new ObjectMethodCompletionContext(),
+	    return new ICompletionContext[] {
+	    			new FunctionCompletionContext(),
+	    			new ObjectMethodCompletionContext()
 	    		};
 	}
 }
