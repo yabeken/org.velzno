@@ -39,10 +39,11 @@ public class FunctionCompletionContext extends ClassMemberContext{
 			}else if(m3.find()){
 				//TODO
 				functionName = m3.group(1);
-				IType type = CodeAssistUtils.getVariableType(sourceModule, "$a", getOffset())[0];
+				IType type = CodeAssistUtils.getVariableType(sourceModule, m3.group(2), getOffset())[0];
 				className = type.getElementName().toString();
 			}
 		} catch (Exception e) {
+			clearNames();
 			return false;
 		}
 		if(super.isValid(sourceModule, offset, requestor) && getTriggerType() == Trigger.OBJECT){
