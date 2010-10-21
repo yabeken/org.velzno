@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Velzno
 Bundle-SymbolicName: org.velzno;singleton:=true
-Bundle-Version: 0.1.1
+Bundle-Version: 0.1.3
 Bundle-Activator: org.velzno.Activator
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -12,4 +12,5 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  org.eclipse.dltk.core;bundle-version="2.0.1",
  org.eclipse.php.core;bundle-version="2.2.1",
  org.eclipse.wst.sse.core;bundle-version="1.1.502",
- org.eclipse.php.ui;bundle-version="2.2.1"
+ org.eclipse.php.ui;bundle-version="2.2.1",
+ org.apache.commons.httpclient;bundle-version="3.1.0"

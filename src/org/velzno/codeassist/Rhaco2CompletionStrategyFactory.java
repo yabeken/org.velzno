@@ -14,6 +14,8 @@ public class Rhaco2CompletionStrategyFactory implements ICompletionStrategyFacto
 		for(ICompletionContext context : contexts){
 			if(context instanceof ObjectMethodCompletionContext){
 				result.add(new ObjectMethodCompletionStrategy(context));
+			}else if(context instanceof PackageCompletionContext){
+				result.add(new PackageCompletionStrategy(context));
 			}
 		}
 		return (ICompletionStrategy[]) result.toArray(new ICompletionStrategy[result.size()]);
