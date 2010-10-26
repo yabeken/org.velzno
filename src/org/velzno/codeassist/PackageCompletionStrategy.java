@@ -53,6 +53,15 @@ public class PackageCompletionStrategy extends AbstractCompletionStrategy implem
 				if(Pattern.compile("\\.[A-Z].*?\\.").matcher(path).find()) continue;
 				if(Pattern.compile("\\.[A-Z][a-zA-Z0-9_]*?$").matcher(path).find()){
 					if(path.startsWith(context.getArgument())){
+						String filename = folder.getElementName();
+						if(filename.contains("vendors")){
+							filename = filename.substring(filename.indexOf("vendors") + "vendors".length());
+						}else if(filename.contains("libs")){
+							filename = filename.substring(filename.indexOf("libs") + "libs".length());
+						}else{
+							continue;
+						}
+						if(filename.substring(1).replace('/', '.').equals(path)) continue;
 						reporter.reportKeyword(path, "", context.getReplaceRange());
 					}
 					continue;
@@ -64,7 +73,7 @@ public class PackageCompletionStrategy extends AbstractCompletionStrategy implem
 					String filename = source.getElementName();
 					if(!"ABCDEFGHIJKLMNOPQRSTUVWXYZ".contains(filename.substring(0, 1))) continue;
 					filename = filename.substring(0, filename.indexOf('.'));
-					String filepath = path + "." + filename;
+					String filepath = path.length() == 0 ? filename : path + "." + filename;
 					if(filepath.contains("." + filename + "." + filename)) continue;
 					if(filepath.startsWith(context.getRootPath() + context.getArgument())){
 						reporter.reportKeyword(filepath.substring(context.getRootPath().length()), "", context.getReplaceRange());
