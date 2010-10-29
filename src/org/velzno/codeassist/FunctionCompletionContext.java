@@ -46,8 +46,13 @@ public class FunctionCompletionContext extends ClassMemberContext{
 			clearNames();
 			return false;
 		}
-		if(super.isValid(sourceModule, offset, requestor) && getTriggerType() == Trigger.OBJECT){
-			return true;
+		try{
+			if(super.isValid(sourceModule, offset, requestor) && getTriggerType() == Trigger.OBJECT){
+				return true;
+			}
+		}catch(Exception e){
+			
+			return false;
 		}
 		return false;
 	}

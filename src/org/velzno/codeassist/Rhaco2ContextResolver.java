@@ -8,7 +8,7 @@ public class Rhaco2ContextResolver extends CompletionContextResolver implements 
 	public ICompletionContext[] createContexts() {
 	    return new ICompletionContext[] {
 	    			new FunctionCompletionContext(),
-	    			new ObjectMethodCompletionContext(),
+	    			new AccessorCompletionContext(),
 	    			new PackageCompletionContext()
 	    		};
 	}

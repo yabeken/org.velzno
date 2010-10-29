@@ -18,30 +18,13 @@ import org.eclipse.php.internal.core.typeinference.FakeMethod;
 import org.eclipse.php.internal.core.typeinference.PHPModelUtils;
 
 /**
- * 基底クラス Object を継承したクラスのコードアシストを行う
+ * 基底クラス Object を継承したクラスのアクセッサを補完する
  * @author yabeken
  */
 @SuppressWarnings("restriction")
-public class ObjectMethodCompletionStrategy extends ClassMembersStrategy implements ICompletionStrategy{
-	private List<String> excludeMethods = new ArrayList<String>();
-	public ObjectMethodCompletionStrategy(ICompletionContext context) {
+public class AccessorCompletionStrategy extends ClassMembersStrategy implements ICompletionStrategy{
+	public AccessorCompletionStrategy(ICompletionContext context) {
 		super(context);
-		this.excludeMethods.add("__new__");
-		this.excludeMethods.add("__init__");
-		this.excludeMethods.add("__del__");
-		this.excludeMethods.add("__clone__");
-		this.excludeMethods.add("__get__");
-		this.excludeMethods.add("__set__");
-		this.excludeMethods.add("__str__");
-		this.excludeMethods.add("__hash__");
-		this.excludeMethods.add("__add__");
-		this.excludeMethods.add("__sub__");
-		this.excludeMethods.add("__mul__");
-		this.excludeMethods.add("__div__");
-		this.excludeMethods.add("__cp__");
-		this.excludeMethods.add("__import__");
-		this.excludeMethods.add("__shutdown__");
-		
 	}
 
 	public void apply(ICompletionReporter reporter) throws Exception {
@@ -60,10 +43,10 @@ public class ObjectMethodCompletionStrategy extends ClassMembersStrategy impleme
 		List<String> accessors = new ArrayList<String>();
 		if(Rhaco2Utils.isSubclassOfObject(type)){
 			try {
-				for(String a : extractAccessors(PHPModelUtils.getSuperTypeHierarchyMethod(type, "__", false, null))){
+				for(String a : extractAccessors(PHPModelUtils.getSuperTypeHierarchyMethod(type, "___", false, null))){
 					accessors.add(a);
 				}
-				for(String a : extractAccessors(PHPModelUtils.getTypeMethod(type, "__", false))){
+				for(String a : extractAccessors(PHPModelUtils.getTypeMethod(type, "___", false))){
 					accessors.add(a);
 				}
 				for(String f : extractAccessorFields(PHPModelUtils.getSuperTypeHierarchyField(type, "$", false, null))){
@@ -87,11 +70,10 @@ public class ObjectMethodCompletionStrategy extends ClassMembersStrategy impleme
 	private String[] extractAccessors(IMethod[] methods){
 		List<String> result = new ArrayList<String>();
 		for(IMethod m : methods){
-			if(!m.getElementName().endsWith("__") || m.getElementName().startsWith("__choices_") 
-					|| excludeMethods.contains(m.getElementName())){
-				continue;
+			String a = m.getElementName();
+			if(a.endsWith("___") && !a.equals("___get___") && !a.equals("___set___")){
+				result.add(a.substring(3, a.length() - 3));
 			}
-			result.add(m.getElementName().substring(2, m.getElementName().length() - 2));
 		}
 		return result.toArray(new String[result.size()]);
 	}

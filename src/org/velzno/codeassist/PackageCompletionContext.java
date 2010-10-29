@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 
 import org.eclipse.dltk.core.CompletionRequestor;
 import org.eclipse.dltk.core.ISourceModule;
-import org.eclipse.dltk.core.ModelException;
 import org.eclipse.dltk.internal.core.SourceRange;
 import org.eclipse.php.internal.core.codeassist.contexts.QuotesContext;
 
