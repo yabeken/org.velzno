@@ -1,13 +1,13 @@
-package org.velzno.codeassist;
+package org.velzno.rhaco.codeassist;
 
 import org.eclipse.dltk.ti.GoalState;
 import org.eclipse.dltk.ti.goals.GoalEvaluator;
 import org.eclipse.dltk.ti.goals.IGoal;
 import org.eclipse.php.internal.core.typeinference.PHPClassType;
 
-public class FunctionGoalEvaluator extends GoalEvaluator{
+public class PHPClassTypeGoalEvaluator extends GoalEvaluator{
 	private String className;
-	public FunctionGoalEvaluator(IGoal goal, String className) {
+	public PHPClassTypeGoalEvaluator(IGoal goal, String className) {
 		super(goal);
 		this.className = className;
 	}

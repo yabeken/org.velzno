@@ -2,12 +2,12 @@
 <?eclipse version="3.4"?>
 <plugin>
   <extension point="org.eclipse.php.core.completionStrategyFactories">
-     <factory class="org.velzno.codeassist.Rhaco2CompletionStrategyFactory"/>
+     <factory class="org.velzno.rhaco.codeassist.RhacoCompletionStrategyFactory"/>
   </extension>
   <extension point="org.eclipse.php.core.completionContextResolvers">
-     <resolver class="org.velzno.codeassist.Rhaco2ContextResolver"/>
+     <resolver class="org.velzno.rhaco.codeassist.RhacoContextResolver"/>
   </extension>
   <extension point="org.eclipse.php.core.goalEvaluatorFactories">
-     <factory class="org.velzno.codeassist.FunctionGoalEvaluatorFactory" priority="100"/>
+     <factory class="org.velzno.rhaco.codeassist.function.FunctionGoalEvaluatorFactory" priority="100"/>
   </extension>
 </plugin>
