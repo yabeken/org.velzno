@@ -4,7 +4,7 @@ import org.eclipse.dltk.ti.IGoalEvaluatorFactory;
 import org.eclipse.dltk.ti.goals.GoalEvaluator;
 import org.eclipse.dltk.ti.goals.IGoal;
 import org.eclipse.php.internal.core.typeinference.goals.phpdoc.PHPDocMethodReturnTypeGoal;
-import org.velzno.rhaco.codeassist.PHPClassTypeGoalEvaluator;
+import org.velzno.codeassist.PHPClassTypeGoalEvaluator;
 
 public class FunctionGoalEvaluatorFactory implements IGoalEvaluatorFactory {
 	@Override
