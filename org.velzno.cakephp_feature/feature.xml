@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.velzno.cakephp.feature"
+      id="org.velzno.cakephp_feature"
       label="Cake Patissier"
       version="0.1.0"
       provider-name="Kentaro YABE">

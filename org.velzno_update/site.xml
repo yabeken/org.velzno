@@ -6,9 +6,7 @@
    <feature url="features/org.velzno.rhaco_feature_0.1.10.jar" id="org.velzno.rhaco_feature" version="0.1.10">
       <category name="velzno"/>
    </feature>
-   <feature url="features/org.velzno.cakephp.feature_0.1.0.jar" id="org.velzno.cakephp.feature" version="0.1.0">
-      <category name="cakephp"/>
-   </feature>
+   <feature url="features/org.velzno.cakephp_feature_0.1.0.jar" id="org.velzno.cakephp_feature" version="0.1.0"/>
    <category-def name="velzno" label="velzno"/>
    <category-def name="cakephp" label="Cake Patissier"/>
 </site>
