@@ -1,3 +1,5 @@
 .settings
 .cache
 bin
+*.jar
+.DS_Store
