@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: velzno
+Bundle-SymbolicName: org.velzno
+Bundle-Version: 0.1.0
+Bundle-Vendor: yabeken
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.dltk;bundle-version="2.0.0",
+ org.eclipse.dltk.core;bundle-version="2.0.1",
+ org.eclipse.php.core;bundle-version="2.2.1"
+Export-Package: org.velzno.codeassist

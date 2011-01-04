@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="org.eclipse.php.core.completionContextResolvers">
+         <resolver class="org.velzno.cakephp.codeassist.CakephpContextResolver"/>
+	</extension>
+	<extension point="org.eclipse.php.core.completionStrategyFactories">
+		<factory class="org.velzno.cakephp.codeassist.CakephpCompletionStrategyFactory"/>
+	</extension>
+	<extension point="org.eclipse.php.core.goalEvaluatorFactories">
+		<factory class="org.velzno.cakephp.codeassist.controller.ControllerMemberGoalEvaluatorFactory" priority="100"/>
+		<factory class="org.velzno.cakephp.codeassist.classregistry.ClassRegistryGoalEvaluatorFactory" priority="100"/>
+		<factory class="org.velzno.cakephp.codeassist.view.ViewHelperMemberGoalEvaluatorFactory" priority="100"/>
+	</extension>
+</plugin>
