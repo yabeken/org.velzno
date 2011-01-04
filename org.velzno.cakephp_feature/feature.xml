@@ -31,6 +31,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
    </license>
 
+   <url>
+      <update label="velzno" url="http://velzno.org/update"/>
+   </url>
+
    <plugin
          id="org.velzno"
          download-size="0"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.velzno.rhaco.feature"
+      id="org.velzno.rhaco_feature"
       label="velzno"
       version="0.1.10"
       provider-name="Kentaro YABE">
