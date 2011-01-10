@@ -3,6 +3,8 @@ package org.velzno.rhaco.codeassist;
 import org.eclipse.php.core.codeassist.ICompletionContext;
 import org.eclipse.php.core.codeassist.ICompletionContextResolver;
 import org.eclipse.php.internal.core.codeassist.contexts.CompletionContextResolver;
+import org.velzno.rhaco.codeassist.annotation.PropertyNameContext;
+import org.velzno.rhaco.codeassist.annotation.PropertyTypeContext;
 import org.velzno.rhaco.codeassist.function.FunctionContext;
 import org.velzno.rhaco.codeassist.object.AccessorContext;
 import org.velzno.rhaco.codeassist.package_name.PackageContext;
@@ -12,7 +14,9 @@ public class RhacoContextResolver extends CompletionContextResolver implements I
 	    return new ICompletionContext[] {
 	    			new FunctionContext(),
 	    			new PackageContext(),
-	    			new AccessorContext()
+	    			new AccessorContext(),
+	    			new PropertyTypeContext(),
+	    			new PropertyNameContext()
 	    		};
 	}
 }
